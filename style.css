@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 :root {
@@ -12,11 +13,17 @@
     --font-1:'Lexend Deca', sans-serif;
     --font-2: 'Urbanist', sans-serif;
 }
-
+html {
+    max-width: 100%;
+    
+}
 body {
     background: rgb(30,61,88);
     background: linear-gradient(180deg, rgba(30,61,88,1) 0%, rgba(67,176,241,1) 25%, rgba(232,238,241,1) 100%);
-    height: 200vh;
+    height: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
     position: relative;
 }
 header>div {
@@ -24,28 +31,21 @@ header>div {
     align-items: center;
     justify-content: center;
 }
-.headertitle {
-    font-family: var(--font-1);
-    font-size: 46px;
-    text-align: center;
-    letter-spacing: 2px;
-    overflow-wrap: none;
-    font-weight: 800;
-    text-shadow: 0 0 7px var(--extra-color);
-    white-space: nowrap;
-    color: var(--font-color);
-    user-select: none;
-    text-transform: lowercase;
+
+.logoimg {
+    width: 22vw;
+    height: auto;
 }
 
 header {
-    position: sticky;
+    position: fixed;
     top: 0;
+    width: 100vw;
     padding: 14px;
     display: grid;
     grid-template-columns: 4fr 5fr;
     background-color: var(--secondary-color);
-    box-shadow: 0 0 5px var(--extra-color);
+    box-shadow: 0 0 6px 1px var(--extra-color);
 }
 
 
@@ -55,9 +55,9 @@ header {
     align-items: center;
     justify-content: space-around;
     font-family: var(--font-2);
-    font-size: 36px;
+    font-size: 2.1vw;
     font-weight: 600;
-    letter-spacing: 5px;
+    letter-spacing: 2px;
     text-transform: lowercase;
 }
 
@@ -68,7 +68,7 @@ header {
 
 .menuheader>a:hover {
     color: var(--extra-color);
-    transition: .1s ease-in-out;
+    transition: .15s ease-in-out;
 }
 
 .menuheader>a:active {
@@ -76,3 +76,135 @@ header {
     transition: .04s ease-in-out;
 }
 
+.s_inicio, .s_contacto, .s_proyectos {
+    height: 100vh;
+    width: 100vw;
+}
+
+.s_inicio {
+    padding-top: 11vh;
+    padding-right: 5vw;
+    padding-left: 5vw;
+    display: grid;
+    gap: 3vw;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 4fr 4fr;
+}
+
+.img_progra {
+    height: auto;
+    width: 40vw;
+    box-shadow: 0 0 12px 5px var(--font-color);
+}
+
+.s_inicio>div>h2 {
+    font-family: var(--font-2);
+    font-weight: 300;
+    font-size: 4.8vw;
+    color: #e8eef1;
+    text-align: center;
+}
+
+.s_inicio>div>h2:nth-of-type(2) {
+    font-family: var(--font-2);
+    font-weight: 600;
+    font-size: 5vw;
+    color: #e8eef1;
+    font-style: italic;
+    text-align: center;
+}
+
+.s_proyectos {
+    padding-right: 5vw;
+    padding-left: 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.s_proyectos>h2 {
+    font-family: var(--font-2);
+    font-weight: 300;
+    font-size: 5.2vw;
+    color: var(--font-color);
+    text-align: center;
+}
+.grid_proyectos {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10vw;
+}
+
+.grid_proyectos>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.grid_proyectos>div>p {
+    font-family: var(--font-2);
+    font-weight: 300;
+    font-size: 2.2vw;
+    color: var(--font-color);
+    text-align: center;
+}
+
+.s_contacto {
+    padding-top: 10vh;
+    padding-right: 5vw;
+    padding-left: 5vw;
+    display: grid;
+    gap: 3vw;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    grid-template-columns: 2fr 1fr;
+}
+
+.h2_dir {
+    font-family: var(--font-2);
+    font-weight: 700;
+    font-size: 2.5vw;
+    color: var(--font-color);
+    text-align: center;
+    padding-bottom: 25px;
+}
+.h2_ch {
+    font-family: var(--font-2);
+    font-weight: 300;
+    font-size: 1.8vw;
+    color: var(--font-color);
+    text-align: center;
+    padding-bottom: 25px;
+    font-style: italic;
+}
+.s_contacto>div>h2:nth-of-type(3) {
+    font-family: var(--font-2);
+    font-weight: 300;
+    font-size: 4.4vw;
+    color: var(--font-color);
+    text-align: center;
+
+}
+.map {
+    box-shadow: 0 0 12px 1px var(--secondary-color);
+    width:41vw;
+    height:55vh;
+}
+
+footer {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: var(--font-color);
+    box-shadow: 0 0 12px 1px var(--font-color);
+}
+
+footer>img {
+    width: 11vw;
+    height: auto;
+}
